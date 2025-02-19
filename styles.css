@@ -58,7 +58,7 @@ form label {
 
 form textarea, form input {
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 10px;;
     border: 1px solid #ccc;
     border-radius: 4px;
 }

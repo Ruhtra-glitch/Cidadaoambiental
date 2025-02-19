@@ -1,14 +1,35 @@
+
 // Relatar problema
 document.getElementById('reportForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const problem = document.getElementById('problem').value;
+
+    // Pega os valores dos campos
+    const subject = document.getElementById('subject').value;
+    const description = document.getElementById('description').value;
+    const category = document.getElementById('category').value;
     const location = document.getElementById('location').value;
+    const media = document.getElementById('media').files[0]; // Pega o primeiro arquivo enviado
+
+    // Validação simples para garantir que todos os campos foram preenchidos
+    if (!subject || !description || !category || !location || !media) {
+        alert('Por favor, preencha todos os campos e anexe uma mídia.');
+        return;
+    }
 
     alert('Problema relatado com sucesso!');
 
     // Adiciona o relatório à lista de administração
     const reportItem = document.createElement('li');
-    reportItem.textContent = `Problema: ${problem}, Localização: ${location}`;
+    reportItem.textContent = `Título: ${subject}, Descrição: ${description}, Categoria: ${category}, Localização: ${location}`;
+
+    // Se houver mídia, mostrar nome do arquivo
+    if (media) {
+        const mediaInfo = document.createElement('span');
+        mediaInfo.textContent = ` (Arquivo Anexado: ${media.name})`;
+        reportItem.appendChild(mediaInfo);
+    }
+
+    // Adiciona o item ao painel de administração
     document.getElementById('reportsList').appendChild(reportItem);
 
     // Limpa o formulário
@@ -39,8 +60,16 @@ document.getElementById('homeLink').addEventListener('click', function(event) {
     document.getElementById('contact').style.display = 'block';
 });
 
-    // Adiciona a mensagem do usuário ao chat
-    const userMessageDiv = document.createElement('div');
-    userMessageDiv.textContent = `Usuário: ${userMessage}`;
-    messages.appendChild(userMessageDiv);
+// Exemplo para a funcionalidade de mapa - pode ser integrado com APIs de mapa
+document.getElementById('mapBtn').addEventListener('click', function() {
+    const location = document.getElementById('location').value;
+    if (!location) {
+        alert('Por favor, insira um endereço ou bairro para visualizar no mapa.');
+        return;
+    }
+    
+    // Exemplo simples - abrir o Google Maps com a localização do usuário
+    const url = `https://www.google.com/maps?q=${encodeURIComponent(location)}`;
+    window.open(url, '_blank');
+});
 
