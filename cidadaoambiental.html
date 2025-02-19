@@ -1,0 +1,70 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadão Ambiental</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/logocidadaoambiental.png"alt= "logo do site" class="logo">
+        <h1>Cidadão Ambiental</h1>
+        <nav>
+            <ul>
+                
+                <li><a href="#home" id="homeLink">Home</a></li>
+                <li><a href="#report">Relatar Problema</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="#admin" id="adminLink">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            
+            <h2>Bem-vindo ao Cidadão Ambiental</h2>
+            <p>Bem-vindo(a) ao Cidadão Ambiental, a plataforma onde você pode fazer a diferença na preservação do meio ambiente! Juntos, podemos construir um futuro mais verde e sustentável para nossa comunidade.
+
+                <br>O que fazemos:<br>
+                
+                <br>Conectamos cidadãos e autoridades: Facilitamos a comunicação entre você e os órgãos responsáveis, garantindo que suas denúncias sejam ouvidas e tratadas com a devida atenção.<br>
+            
+                <br>Monitoramos e mapeamos problemas ambientais: Através das suas denúncias, criamos um mapa interativo com os principais desafios ambientais da sua região, permitindo uma visão clara e abrangente da situação.<br>
+
+                <br>Promovemos a conscientização e a educação ambiental: Compartilhamos informações relevantes, dicas e notícias sobre sustentabilidade, incentivando a participação ativa da comunidade na proteção do meio ambiente.<br>
+
+                <br>Fortalecemos a comunidade: Criamos um espaço para troca de ideias, debates e ações conjuntas em prol do meio ambiente, unindo pessoas com o mesmo objetivo: um futuro sustentável.
+                Como funciona:<br>
+                
+                <br>Denuncie: Registre problemas como desmatamento, poluição, descarte irregular de lixo e outros crimes ambientais de forma rápida e fácil.<br>
+                <br>Acompanhe: Receba atualizações sobre o andamento da sua denúncia e veja como sua contribuição está fazendo a diferença.<br>
+                <br>Participe: Engaje-se em debates, compartilhe ideias e participe de ações coletivas para proteger o meio ambiente da sua região.<br>
+                <br>Junte-se a nós e faça parte da mudança!<br></p>
+        </section>
+        <section id="report">
+            <h2>Relatar Problema</h2>
+            <form id="reportForm">
+                <label for="problem">Descrição do Problema:</label>
+                <textarea id="problem" name="problem" required></textarea>
+                <label for="location">Localização:</label>
+                <input type="text" id="location" name="location" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco pelo email: contato@cidadaoambiental.org</p>
+        </section>
+        <section id="admin" style="display: none;">
+            <h2>Administração</h2>
+            <p>Bem-vindo, administrador! Aqui você pode gerenciar os relatórios de problemas.</p>
+            <ul id="reportsList"></ul>
+        </section>
+    
+    </main>
+    <footer>
+        <p>&copy; 2025 Cidadão Ambiental. Todos os direitos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
